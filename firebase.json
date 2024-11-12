@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "site": "beeriokart",
+    "public": "build"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+  
+
+}
