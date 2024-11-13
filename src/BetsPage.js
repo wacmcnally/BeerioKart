@@ -30,7 +30,9 @@ export default function BetsPage({ userId, setPage }) {
           const racerDoc = await getDoc(doc(db, "users", betData.racerId));
           const username = userDoc.exists() ? userDoc.data().username : "Unknown";
           const racerName = racerDoc.exists() ? racerDoc.data().username : "Unknown";
-          return { id: betDoc.id, ...betData, username, racerName };
+          const odds = betData.odds || 1; // Assuming odds are stored in the bet document
+          const totalPayout = betData.betAmount * odds;
+          return { id: betDoc.id, ...betData, username, racerName, odds, totalPayout };
         }));
         setBets(betsData);
       } else {
@@ -62,11 +64,13 @@ export default function BetsPage({ userId, setPage }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {bets.map(bet => (
             <div key={bet.id} className="p-4 bg-white border border-gray-200 rounded-lg shadow-md relative">
-                <p className="text-black font-bold">Racer: {bet.racerName}</p>
+              <p className="text-black font-bold">Racer: {bet.racerName}</p>
               <p className="text-gray-700 font-semibold">Bet Amount: ${bet.betAmount}</p>
               <p className="text-gray-700">Approved: {bet.approved ? "Yes" : "No"}</p>
               <p className="text-gray-700">Race Time: {new Date(bet.raceTime.seconds * 1000).toLocaleString()}</p>
               <p className="text-gray-700">Placed by: {bet.username}</p>
+              <p className="text-gray-700">Odds: {bet.odds}</p>
+              <p className="text-gray-700">Total Payout: ${bet.totalPayout.toFixed(2)}</p>
               
               {isAdmin && (
                 <button

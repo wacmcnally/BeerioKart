@@ -4,7 +4,7 @@ import { doc, updateDoc, getFirestore, getDoc } from 'firebase/firestore';
 import app from './firebase';
 
 const characters = [
-    'Mario', 'Luigi', 'Peach', 'Daisy', 'Rosalina', 'Tanooki Mario', 'Cat Peach', 'Yoshi', 'Toad', 'Koopa Troopa', 'Shy Guy', 'Lakitu', 'Toadette', 'King Boo', 'Baby Mario', 'Baby Luigi', 'Baby Peach', 'Baby Daisy', 'Baby Rosalina', 'Metal Mario', 'Pink Gold Peach', 'Donkey Kong', 'Wario', 'Waluigi', 'Bowser', 'Dry Bones', 'Bowser Jr.', 'Lemmy', 'Larry', 'Wendy', 'Ludwig', 'Iggy', 'Roy', 'Morton', 'Inkling Girl', 'Inkling Boy', 'Link', 'Villager (Male)', 'Villager (Female)', 'Isabelle', 'Dry Bowser', 'Sexy Scott'
+    'Mario', 'Luigi', 'Peach', 'Daisy', 'Rosalina', 'Tanooki Mario', 'Cat Peach', 'Yoshi', 'Toad', 'Koopa Troopa', 'Shy Guy', 'Lakitu', 'Toadette', 'King Boo', 'Baby Mario', 'Baby Luigi', 'Baby Peach', 'Baby Daisy', 'Baby Rosalina', 'Metal Mario', 'Pink Gold Peach', 'Donkey Kong', 'Wario', 'Waluigi', 'Bowser', 'Dry Bones', 'Bowser Jr.', 'Lemmy', 'Larry', 'Wendy', 'Ludwig', 'Iggy', 'Roy', 'Morton', 'Inkling Girl', 'Inkling Boy', 'Link', 'Villager (Male)', 'Villager (Female)', 'Isabelle', 'Dry Bowser'
   ];
 
 export default function SettingsPage() {

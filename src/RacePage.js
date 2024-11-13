@@ -101,6 +101,7 @@ export default function RacePage({ raceId, setPage, setRace, userId }) {
           approved: false
         });
         console.log("Bet placed successfully");
+        alert("Your bet has been placed");
       } catch (error) {
         console.error("Error placing bet: ", error);
       }
